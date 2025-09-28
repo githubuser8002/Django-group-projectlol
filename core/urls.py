@@ -17,6 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.shortcuts import render
+from elec_diary import views
 
 def main(request):
     return render(request, "main.html")
@@ -24,4 +25,5 @@ def main(request):
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', main, name='main'),
+    path("grades/", views.show_grades, name="table_grades"),
 ]
